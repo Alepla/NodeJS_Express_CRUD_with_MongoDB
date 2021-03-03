@@ -17,9 +17,9 @@ GET
     curl http://localhost:8000/api/muestras
 GET BY ID
     curl http://localhost:8000/api/muestra/603f8f76e3f9410a183239b4
-GET BY ANOMALÍA
+GET BY ANOMALY
     curl http://localhost:8000/api/muestrasWithAnomaly
-GET BY USUARIO
+GET BY USER
     curl http://localhost:8000/api/muestraByUser/2
 PUT
     curl -X PUT -H 'Content-Type: application/json' -d '{

@@ -29,6 +29,4 @@ mongoose.set("useFindAndModify", false);
 mongoose
   .connect(uri, options)
   .then(() => app.listen(PORT, () => console.log(`Listening on port ${PORT}`)))
-  .catch((e) => {
-    throw e;
-  });
+  .catch((e) => console.log("MongoDB connection error: " + e));
