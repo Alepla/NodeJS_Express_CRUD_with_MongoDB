@@ -16,8 +16,11 @@ np run dev
 GET
     curl http://localhost:8000/api/muestras
 GET BY ID
+    curl http://localhost:8000/api/muestra/603f8f76e3f9410a183239b4
 GET BY ANOMALÍA
+    curl http://localhost:8000/api/muestrasWithAnomaly
 GET BY USUARIO
+    curl http://localhost:8000/api/muestraByUser/2
 PUT
     curl -X PUT -H 'Content-Type: application/json' -d '{
         "date": "2021-02-04 ",

@@ -14,6 +14,46 @@ export const getMuestras = async (
   }
 };
 
+export const getMuestraById = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const muestra: IMuestra | null = await Muestra.findById(req.params.id);
+    res.status(200).json({ muestra });
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
+};
+
+export const getMuestraByUser = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const muestra: IMuestra[] = await Muestra.find({
+      user: parseInt(req.params.user),
+    });
+    res.status(200).json({ muestra });
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
+};
+
+export const getMuestraWithAnomaly = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const muestrasWithAnomaly: IMuestra[] = await Muestra.find({
+      anomaly: true,
+    });
+    res.status(200).json({ muestrasWithAnomaly });
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
+};
+
 export const addMuestra = async (
   req: Request,
   res: Response
