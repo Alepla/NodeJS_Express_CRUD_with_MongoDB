@@ -3,11 +3,14 @@
 # To start
 
 ```
+npm i
+cp .env.example .env
 cd mongodb
 docker-compose up -d
+np run dev
 ```
 
-# Comands
+# Commands
 
 ```
 GET http://localhost:8000/api/muestras
