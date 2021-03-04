@@ -1,4 +1,4 @@
-import * as dotenv from "dotenv";
+import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -8,7 +8,6 @@ import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/not-found.middleware";
 
 dotenv.config();
-
 if (!process.env.PORT) process.exit(1);
 
 const PORT: number = parseInt(process.env.PORT as string, 10);
@@ -22,7 +21,7 @@ app.use("/api", muestrasRouter);
 app.use(errorHandler);
 app.use(notFoundHandler);
 
-const uri: string = `mongodb://127.0.0.1:27017/${process.env.MONGO_DB}`;
+const uri: string = `mongodb://mongodb:27017/${process.env.MONGO_DB}`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 mongoose.set("useFindAndModify", false);

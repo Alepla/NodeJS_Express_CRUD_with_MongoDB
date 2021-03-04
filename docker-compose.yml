@@ -1,0 +1,20 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb_rithmi
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+  mongo-seed:
+    build: ./mongodb/mongo-seed
+    links:
+      - mongodb
+  api:
+    image: node-app_rithmi
+    env_file: docker-compose.env
+    ports:
+      - 49160:8000
+    restart: unless-stopped
+    links:
+      - mongodb

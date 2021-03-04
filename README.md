@@ -1,16 +1,26 @@
 # NodeJS_Express_CRUD_with_MongoDB
 
-# To start
+Node version v12.18.3
+
+## To start in dev
 
 ```
 npm i
 cp .env.example .env
-cd mongodb
-docker-compose up -d
 np run dev
 ```
 
-# To test calls
+## To start all in docker
+
+```
+#Create the image for our node backend
+sudo docker build -t node-app_rithmi .
+#Run the docker-compose.yml that creates the containers for our database in mongo and the backend
+sudo docker-compose up -d
+#Now type http://localhost:49160/ in the browser
+```
+
+## To test calls
 
 ```
 GET

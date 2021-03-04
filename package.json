@@ -1,11 +1,12 @@
 {
   "name": "NodeJS_Express_CRUD_with_MongoDB",
   "version": "1.0.0",
-  "description": "",
+  "description": "NodeJS app",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
