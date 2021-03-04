@@ -14,10 +14,47 @@ npm run dev
 
 ```
 #Create the image for our node backend
-sudo docker build -t node-app_rithmi .
+docker build -t node-app_rithmi .
 #Run the docker-compose.yml that creates the containers for our database in mongo and the backend
-sudo docker-compose up -d
+docker-compose up -d
 #Now type http://localhost:49160/ in the browser
+```
+
+## Adding auth to MongoDB
+
+```
+#First we have to uncomment in the index.ts the line 24 and comment the line 25.
+#Then we have to run:
+docker build -t node-app_rithmi .
+docker-compose up -d
+docker exec -it mongodb_rithmi /bin/bash
+use admin
+db.createUser(
+    {
+        user: "root",
+        pwd: "root",
+        roles:["root"]
+    }
+);
+use rithmi
+db.createUser(
+    {
+        user: "alex",
+        pwd: "alex",
+        roles:[
+            {
+                role: "readWrite",
+                db: "rithmi"
+            }
+        ]
+    }
+);
+
+#Descoment this line in the docker-compose.yml
+command: [--auth]
+
+#And run again:
+docker-compose up -d
 ```
 
 ## To test calls

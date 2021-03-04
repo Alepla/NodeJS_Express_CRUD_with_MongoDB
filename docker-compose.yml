@@ -3,6 +3,7 @@ services:
   mongodb:
     image: mongo
     container_name: mongodb_rithmi
+    #command: [--auth]
     ports:
       - 27017:27017
     restart: unless-stopped

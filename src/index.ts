@@ -21,6 +21,7 @@ app.use("/api", muestrasRouter);
 app.use(errorHandler);
 app.use(notFoundHandler);
 
+//const uri: string = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@mongodb:27017/${process.env.MONGO_DB}`;
 const uri: string = `mongodb://mongodb:27017/${process.env.MONGO_DB}`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
