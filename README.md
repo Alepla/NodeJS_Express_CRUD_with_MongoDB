@@ -7,7 +7,7 @@ Node version v12.18.3
 ```
 npm i
 cp .env.example .env
-np run dev
+npm run dev
 ```
 
 ## To start all in docker
