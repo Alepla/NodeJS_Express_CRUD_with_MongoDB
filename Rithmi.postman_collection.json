@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "423550d0-2ecd-4402-b957-cc1f65b3f9f9",
+		"name": "Rithmi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/muestras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:49160/api/muestras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						"api",
+						"muestras"
+					]
+				},
+				"description": "Get all the muestras"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/muestraById/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:49160/api/muestraById/60409d3d13eb2a6a05e4b1ca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						"api",
+						"muestraById",
+						"60409d3d13eb2a6a05e4b1ca"
+					]
+				},
+				"description": "Find muestra by id"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/muestraByUser/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:49160/api/muestraByUser/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						"api",
+						"muestraByUser",
+						"2"
+					]
+				},
+				"description": "Find muestra by user"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/muestrasWithAnomaly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:49160/api/muestrasWithAnomaly",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						"api",
+						"muestrasWithAnomaly"
+					]
+				},
+				"description": "Muestra with anomaly"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/add-muestra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2021-02-04\",\n    \"heartStatus\": 499,\n    \"pulse\": 87,\n    \"hasECG\": true,\n    \"anomaly\": true,\n    \"user\": 700\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:49160/api/add-muestra?date=2021-02-04&heartStatus=499&pulse=87&hasECG=true&anomaly=true&user=700",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						"api",
+						"add-muestra"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2021-02-04"
+						},
+						{
+							"key": "heartStatus",
+							"value": "499"
+						},
+						{
+							"key": "pulse",
+							"value": "87"
+						},
+						{
+							"key": "hasECG",
+							"value": "true"
+						},
+						{
+							"key": "anomaly",
+							"value": "true"
+						},
+						{
+							"key": "user",
+							"value": "700"
+						}
+					]
+				},
+				"description": "Create new muestra"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/update-muestra/",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2021-02-04\",\n    \"heartStatus\": 499,\n    \"pulse\": 87,\n    \"hasECG\": true,\n    \"anomaly\": true,\n    \"user\": 700\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:49160/api/update-muestra/60409d3d13eb2a6a05e4b104?date=2021-02-04&heartStatus=499&pulse=87&hasECG=true&anomaly=true&user=700",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						"api",
+						"update-muestra",
+						"60409d3d13eb2a6a05e4b104"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2021-02-04"
+						},
+						{
+							"key": "heartStatus",
+							"value": "499"
+						},
+						{
+							"key": "pulse",
+							"value": "87"
+						},
+						{
+							"key": "hasECG",
+							"value": "true"
+						},
+						{
+							"key": "anomaly",
+							"value": "true"
+						},
+						{
+							"key": "user",
+							"value": "700"
+						}
+					]
+				},
+				"description": "Update muestra"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/delete-muestra/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:49160/api/delete-muestra/60409d3d13eb2a6a05e4b1ca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49160",
+					"path": [
+						"api",
+						"delete-muestra",
+						"60409d3d13eb2a6a05e4b1ca"
+					]
+				},
+				"description": "Delete muestra"
+			},
+			"response": []
+		}
+	]
+}

@@ -23,17 +23,21 @@ sudo docker-compose up -d
 ## To test calls
 
 ```
+You can import the file Rithmi.postman_collection.json in postman or use the following commands
+```
+
+```
 GET
     curl http://localhost:49160/api/muestras
 GET BY ID
-    curl http://localhost:49160/api/muestra/603f8f76e3f9410a183239b4
+    curl http://localhost:49160/api/muestraById/603f8f76e3f9410a183239b4
 GET BY ANOMALY
     curl http://localhost:49160/api/muestrasWithAnomaly
 GET BY USER
     curl http://localhost:49160/api/muestraByUser/2
 PUT
     curl -X PUT -H 'Content-Type: application/json' -d '{
-        "date": "2021-02-04 ",
+        "date": "2021-02-04",
         "heartStatus": 499,
         "pulse": 87,
         "hasECG": true,
@@ -42,7 +46,7 @@ PUT
     }' http://localhost:49160/api/update-muestra/603fb96f0390dc7838a97f9a
 POST
     curl -X POST -H 'Content-Type: application/json' -d '{
-        "date": "2021-02-04 ",
+        "date": "2021-02-04",
         "heartStatus": 499,
         "pulse": 87,
         "hasECG": true,
