@@ -24,13 +24,13 @@ sudo docker-compose up -d
 
 ```
 GET
-    curl http://localhost:8000/api/muestras
+    curl http://localhost:49160/api/muestras
 GET BY ID
-    curl http://localhost:8000/api/muestra/603f8f76e3f9410a183239b4
+    curl http://localhost:49160/api/muestra/603f8f76e3f9410a183239b4
 GET BY ANOMALY
-    curl http://localhost:8000/api/muestrasWithAnomaly
+    curl http://localhost:49160/api/muestrasWithAnomaly
 GET BY USER
-    curl http://localhost:8000/api/muestraByUser/2
+    curl http://localhost:49160/api/muestraByUser/2
 PUT
     curl -X PUT -H 'Content-Type: application/json' -d '{
         "date": "2021-02-04 ",
@@ -39,7 +39,7 @@ PUT
         "hasECG": true,
         "anomaly": true,
         "user": 700
-    }' http://localhost:8000/api/update-muestra/603fb96f0390dc7838a97f9a
+    }' http://localhost:49160/api/update-muestra/603fb96f0390dc7838a97f9a
 POST
     curl -X POST -H 'Content-Type: application/json' -d '{
         "date": "2021-02-04 ",
@@ -48,7 +48,7 @@ POST
         "hasECG": true,
         "anomaly": true,
         "user": 700
-    }' http://localhost:8000/api/add-muestra
+    }' http://localhost:49160/api/add-muestra
 DELETE
-    curl -X DELETE http://localhost:8000/api/delete-muestra/603fb96f0390dc7838a97f9a
+    curl -X DELETE http://localhost:49160/api/delete-muestra/603fb96f0390dc7838a97f9a
 ```
