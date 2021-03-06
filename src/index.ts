@@ -11,7 +11,7 @@ dotenv.config();
 if (!process.env.PORT) process.exit(1);
 
 const PORT: number = parseInt(process.env.PORT as string, 10);
-const app = express();
+export const app = express();
 
 app.use(helmet());
 app.use(cors());
@@ -22,7 +22,7 @@ app.use(errorHandler);
 app.use(notFoundHandler);
 
 //const uri: string = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@mongodb:27017/${process.env.MONGO_DB}`;
-const uri: string = `mongodb://mongodb:27017/${process.env.MONGO_DB}`;
+const uri: string = `mongodb://${process.env.MONGO_PORT}/${process.env.MONGO_DB}`;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
 mongoose.set("useFindAndModify", false);

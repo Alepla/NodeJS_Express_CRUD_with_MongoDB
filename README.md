@@ -24,10 +24,12 @@ docker-compose up -d
 
 ```
 #First we have to uncomment in the index.ts the line 24 and comment the line 25.
+
 #Then we have to run:
 docker build -t node-app_rithmi .
 docker-compose up -d
 docker exec -it mongodb_rithmi /bin/bash
+
 use admin
 db.createUser(
     {
