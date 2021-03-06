@@ -7,6 +7,8 @@ Node version v12.18.3
 ```
 npm i
 cp .env.example .env
+docker build -t node-app_rithmi .
+docker-compose up -d
 npm run dev
 ```
 
@@ -69,7 +71,7 @@ You can import the file Rithmi.postman_collection.json in postman or use the fol
 GET
     curl http://localhost:49160/api/muestras
 GET BY ID
-    curl http://localhost:49160/api/muestraById/603f8f76e3f9410a183239b4
+    curl http://localhost:49160/api/muestraById/:id
 GET BY ANOMALY
     curl http://localhost:49160/api/muestrasWithAnomaly
 GET BY USER
@@ -82,7 +84,7 @@ PUT
         "hasECG": true,
         "anomaly": true,
         "user": 700
-    }' http://localhost:49160/api/update-muestra/603fb96f0390dc7838a97f9a
+    }' http://localhost:49160/api/update-muestra/:id
 POST
     curl -X POST -H 'Content-Type: application/json' -d '{
         "date": "2021-02-04",
@@ -93,5 +95,5 @@ POST
         "user": 700
     }' http://localhost:49160/api/add-muestra
 DELETE
-    curl -X DELETE http://localhost:49160/api/delete-muestra/603fb96f0390dc7838a97f9a
+    curl -X DELETE http://localhost:49160/api/delete-muestra/:id
 ```
