@@ -4,8 +4,8 @@ services:
     image: mongo
     container_name: mongodb_rithmi
     ports:
-      - 27017:27017
-    restart: unless-stopped
+      - 27018:27017
+    restart: always
   mongo-seed:
     build: ./mongodb/mongo-seed
     links:
